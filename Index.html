@@ -35,9 +35,8 @@
 		text-decoration-style: dashed;
 		background-color: white;
 		color: black;
-		padding: 3pt;
-		border: white 3pt;
-		border-radius: 2pt;
+		padding: 2pt;
+		opacity:0.5;
 		}
 	
 	a:hover {
@@ -54,7 +53,7 @@
  		font-family: Courier New;
  		font-size: 12pt;
  		border: white 10pt;
- 		border-radius: 5pt;
+ 		border-radius: 0pt;
  		padding: 5pt;
  		text-align: center;
  		}
@@ -95,6 +94,31 @@
 	  cursor: pointer;
 	}
 	
+	.tooltip {
+	  position: relative;
+	  display: inline-block;
+	}
+
+	.tooltip .tooltiptext {
+	  visibility: hidden;
+	  width: 120pt;
+	  background-color: black;
+	  color: white;
+	  font-size: 9pt;
+	  opacity: 0.9;
+	  text-align: center;
+	  border-radius: 4px;
+	  padding: 3px 0;
+
+	  /* Position the tooltip */
+	  position: absolute;
+	  z-index: 1;
+	}
+
+	.tooltip:hover .tooltiptext {
+	  visibility: visible;
+	}
+	
 	}</style>
 </head>
 
@@ -102,6 +126,7 @@
 <table style="width:100%" align="center" "table-layout:fixed" "empty-cells:show">
   <tr { style="height: 30vw" } >
     <th { style="width: 100%" }>
+    	<br><br><br>
     	<div class="Visual">
 			<img class="Images" src="Images/Img 1.jpg" style="height:20%">
 			<img class="Images" src="Images/Img 2.jpg" style="height:20%">
@@ -154,12 +179,22 @@
 		</video>
 	</td><td>
     	<div id="Buttons" class="table">
-		<button onclick="PlayA()"> < </button> 
-  		<button onclick="Pause()">||</button> 
-		<button onclick="PlayB()"> > </button> <br><br>
-		<input id="vol-control" type="range" min="0" max="100" step="1" oninput="thisVolume(this.value)" 
+		<button class="tooltip" onclick="PlayA()"> < 
+			<span class="tooltiptext">Dawin + Geok Lan</span>
+		</button>
+		<button class="tooltip" onclick="PlayB()"> > 
+			<span class="tooltiptext">Tai Ran + Harmony</span>
+		</button> 
+		<br><br>
+  		<button class="tooltip" onclick="Pause()">||
+  			<span class="tooltiptext">pause audio</span>
+  		</button>
+  		<br><br>
+		<div class="tooltip">
+		<input class="tooltip" id="vol-control" type="range" min="0" max="100" step="1" oninput="thisVolume(this.value)" 
 			onchange="thisVolume(this.value)"></input>
-  		<div id="vol"></div>
+  		<div class="tooltip" id="vol"><span class="tooltiptext">adjust volume</span></div>
+		</div>
 		</div>
 	 </td><td>
  	 	<video id="AudioB" max-width="100%" width="100%">
@@ -197,7 +232,7 @@
   </tr></table>
   <tr { style="height: 20%" } >
     <td>
-		<table id="links" class="table" style="width:100%" align="center" "table-layout:fixed" "empty-cells:show">
+		<table id="links" class="table" style="width:100%" align="center-top" "table-layout:fixed" "empty-cells:show">
 		  <tr { style="height: 100%" }>
 		  <th { style="width: 50%" }>
 		  <th { style="width: 50%" }>
@@ -205,7 +240,7 @@
 			<a href= "/Statement.html" target="_blank"> About this Work </a>
 			</p></td>
 			<td><p>
-			<a href= "/Credits.html" target="_blank"> Credits </a>
+			<a href= "/Statment.html#credits" target="_blank"> Credits </a>
 			</p></td></tr>
 		</tr></table>
 	</td>
