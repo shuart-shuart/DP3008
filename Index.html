@@ -12,82 +12,7 @@
 	background: nil;
 	background-size: 100%;
 	background-color: grey;
-	animation: animate 0.25s infinite;
-	}
-
-	@keyframes animate{
-	  0%{ 
-		cursor: url("MainCur/Derpy_1.png"), auto;
-	  }
-	  6%{ 
-		cursor: url("MainCur/Derpy_2.png"), auto;
-	  }
-	  12%{ 
-		cursor: url("MainCur/Derpy_3.png"), auto;
-	  }
-	  16%{ 
-		cursor: url("MainCur/Derpy_4.png"), auto;
-	  }
-	  20%{ 
-		cursor: url("MainCur/Derpy_5.png"), auto;
-	  }
-	  24%{ 
-		cursor: url("MainCur/Derpy_6.png"), auto;
-	  }
-	  28%{ 
-		cursor: url("MainCur/Derpy_7.png"), auto;
-	  }
-	  32%{ 
-		cursor: url("MainCur/Derpy_8.png"), auto;
-	  }
-	  36%{ 
-		cursor: url("MainCur/Derpy_9.png"), auto;
-	  }
-	  40%{ 
-		cursor: url("MainCur/Derpy_10.png"), auto;
-	  }
-	  44%{ 
-		cursor: url("MainCur/Derpy_11.png"), auto;
-	  }
-	  48%{ 
-		cursor: url("MainCur/Derpy_12.png"), auto;
-	  }
-	  52%{ 
-		cursor: url("MainCur/Derpy_13.png"), auto;
-	  }
-	  56%{ 
-		cursor: url("MainCur/Derpy_14.png"), auto;
-	  }
-	  60%{ 
-		cursor: url("MainCur/Derpy_15.png"), auto;
-	  }
-	  64%{ 
-		cursor: url("MainCur/Derpy_16.png"), auto;
-	  }
-	  68%{ 
-		cursor: url("MainCur/Derpy_17.png"), auto;
-	  }
-	  72%{ 
-		cursor: url("MainCur/Derpy_18.png"), auto;
-	  }
-	  76%{ 
-		cursor: url("MainCur/Derpy_19.png"), auto;
-	  }
-	  80%{ 
-		cursor: url("MainCur/Derpy_20.png"), auto;
-	  }
-	  84%{ 
-		cursor: url("MainCur/Derpy_21.png"), auto;
-	  }
-	  88%{ 
-		cursor: url("MainCur/Derpy_22.png"), auto;
-	  }
-	  94%{ 
-		cursor: url("MainCur/Derpy_23.png"), auto;
-	  }
-	  100%{ 
-		cursor: url("MainCur/Derpy_24.png"), auto;
-	  }
+	animation: animate 4s infinite;
 	}
 	
 	.pop{
@@ -120,32 +45,40 @@
   <tr { style="height: 60%" } >
     <td>
     	<div id="AudioA" class="hidden">
-			<iframe id="AudioA" src="youtubelink for Audio A"  
-				alt="please refresh the page" style="width:100%">
+			<iframe id="AudioA"
+				height="15" style="opacity:0"
+				alt="please refresh the page"
+				src="https://www.youtube.com/embed/7KPfOVw3JwY?autoplay=1" 
+				frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" 
+			></iframe>
 		</div>
     </td>
     <td>
     	<div id="AudioB" class="hidden">
-			<iframe id="AudioB" src="youtube link" 
-				alt="please refresh the page" style="width:100%">
+			<iframe id="AudioA"
+				height="15" style="opacity:0"
+				alt="please refresh the page"
+				src="https://www.youtube.com/embed/7KPfOVw3JwY?autoplay=1" 
+				frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" 
+			></iframe>
 		</div>
 	</td>
   </tr { style="height: 20%" } >
   <tr>
     <td>
-    // insert work data//
+    <div id=statement>
+    	<p> <a src= "/statement.html"> About this Work </a>
+    	</p>
+    </div>
     </td>
     <td>
-    // insert work data//
-		</div>
+     <div id=credits>
+    	<p> Credits
+    	</p>
+	</div>
 	</td>
   </tr>
 </table>
-
-//iframe code//
-<iframe height="15" src="https://www.youtube.com/embed/7KPfOVw3JwY?autoplay=1" 
-frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" 
-style="opacity:0"></iframe>
 
 </body>
 </html>
