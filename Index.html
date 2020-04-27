@@ -32,7 +32,7 @@
 	.hidden:hover{
 	opacity: 1;
 	}
-	
+		
 	.text{
 	text-align: center;
 	}
@@ -48,20 +48,25 @@
   </tr>
   <tr { style="height: 60%" } >
     <td>
-    	<div id="AudioA" class="hidden">
+    	<div id="AudioA" class="hidden" onmouseover="PauseB()">
+		<p> some text </p>
 			<iframe id="AudioA"
 				height="15" style="opacity:0"
-				alt="please refresh the page"
 				src="https://www.youtube.com/embed/7KPfOVw3JwY?autoplay=1" 
 				frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" 
 			></iframe>
+			
+			<script>
+				function PauseB() {
+				var PauseB = GetElementbyID()
+				}
+			</script>	
 		</div>
     </td>
     <td>
     	<div id="AudioB" class="hidden">
 			<iframe id="AudioA"
 				height="15" style="opacity:0"
-				alt="please refresh the page"
 				src="https://www.youtube.com/embed/7KPfOVw3JwY?autoplay=1" 
 				frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" 
 			></iframe>
@@ -71,13 +76,13 @@
   <tr>
     <td>
     <div id=statement class="text">
-    	<p> <a src= "/statement.html"> About this Work </a>
+    	<p> <a href= "/Statement.html", "_blank"> About this Work </a>
     	</p>
     </div>
     </td>
     <td>
      <div id=credits class="text">
-    	<p> Credits
+    	<p> <a href= "/Credits.html"> Credits </a>
     	</p>
 	</div>
 	</td>
