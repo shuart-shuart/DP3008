@@ -2,41 +2,51 @@
 <html>
 
 <head>
+<header>守 Phases</header>
 <meta name="viewport" content="width=device-width, initial-scale=1">
 	<style>
 	html{
 	cursor: crosshair;
 	}
+	
 	body{
-	font-family: Courier New;
-	background: nil;
-	background-size: 100%;
-	background-color: black;
-	max-height: 100vw;
-	max-width: 100vw;
-	}
+		font-family: Courier New;
+		background: nil;
+		background-size: 100%;
+		background-color: black;
+		max-height: 100vw;
+		max-width: 100vw;
+		}
 	
 	.text{
-	text-align: center;
-	color: white;
-	}
+		text-align: center;
+		color: white;
+		}
 	
 	.Images{
-	transition: 0.8s;
-	display: block;
-	margin-left: auto;
-	margin-right: auto;
-	max-width: 90%;
-	}
+		transition: 0.8s;
+		display: block;
+		margin-left: auto;
+		margin-right: auto;
+		max-width: 90%;
+		}
+		
+	#links{
+		opacity: 0.5;
+		}
+		
+	#Visuals{
+		padding: 30px;
+		}
 	
 	a {
 		transition: 0.3s;
-		text-decoration-line: underline;
+		text-decoration: bold;
 		text-decoration-style: dashed;
 		background-color: white;
 		color: black;
 		padding: 2pt;
-		opacity:0.5;
+		opacity:0.8;
 		}
 	
 	a:hover {
@@ -63,12 +73,12 @@
  		}
  		
 	.table{
-	text-align: center;
-	}
+		text-align: center;
+		}
 	
 	.slidecontainer {
-	  width: 100%;
-	}
+		width: 100%;
+		}
 
 	#vol-control {
 	  -webkit-appearance: none;
@@ -97,6 +107,7 @@
 	.tooltip {
 	  position: relative;
 	  display: inline-block;
+	  margin: 3pt;
 	}
 
 	.tooltip .tooltiptext {
@@ -109,7 +120,6 @@
 	  text-align: center;
 	  border-radius: 4px;
 	  padding: 3px 0;
-
 	  /* Position the tooltip */
 	  position: absolute;
 	  z-index: 1;
@@ -119,38 +129,338 @@
 	  visibility: visible;
 	}
 	
+	.pop{
+		width:450px;
+		height: auto;
+		border: 2px solid black;
+		border-radius: 5px;
+		position: fixed;
+		z-index: 1; /* Sit on top */
+		background-color: white;
+		padding: 10pt;
+		text-align: center;
+		opacity: 0.7;
+	}
+	
+	#Title{
+		top: 8%;
+		right: 20%;
+		display: block;
+	}
+	
+	#About{
+		top: 8%;
+		left: 20%;
+		display: none;
+	}
+	
+	.pop:hover {
+		opacity: 0.95;
+	}
+	
+	#close{ width: 15px;
+			height:15px;
+			margin-top: -10pt;
+			float: right;
+	}
+	
+	h4{
+	margin: 20pt;
+	}
+	
+	h3{
+	margin: 5pt;
+	font-size:16
+	}
+	
+	.info{
+	text-align: center;
+	color: black;
+	margin: auto;
+	width: 80%;
+	max-width: 720px;
+	display: block;
+	font-size: 10pt;
+	}
+	
+	.info_text{
+	text-align: justify;
+	color: black;
+	margin: auto;
+	width: 85%;
+	display: block;
+	font-size: 9pt;
+	}
+	
+	.info_small{
+	text-align: center;
+	color: black;
+	margin: auto;
+	width: 80%;
+	max-width: 370px;
+	display: block;
+	font-size: 8pt;
+	}
+	
+	.title{
+	text-align: center;
+	color: black;
+	margin-top: 10pt;
+	margin-bottom: 5pt;
+	margin-left: auto;
+	margin-right: auto;
+	width: 80%;
+	max-width: 700px;
+	display: block;
+	text-decoration: underline;
+	font-size: 11pt;
+	}
+			
 	}</style>
+
+    
 </head>
 
-<body>
+<body onload="document.getElementById('Title').style.display='float'">
+
+<!-- title and credits pop-up -->
+<div id=Title class="pop">
+	<button id="close" 
+		style="color:white, background-color:black"
+		onclick="document.getElementById('Title').style.display='none'">
+	x </button>
+	
+	<h3 style="font-style:italic">守 Phases </h3>
+
+	<div id="credits">
+	<p class="title">Interviewees</p>
+	<div>
+		<p class="info">Koh Geok Lan
+			<p class="info_small">Geok Lan is a Hokkien who has been practicing ancestral worship from young. 
+			She is also a mother of two daughters. </p>
+			</p>
+		<p class="info">Dawin Ho	
+			<p class="info_small">Dawin is a young Chinese culture aficionado. He is also actively involved in a research project 
+			on the <a href="https://www.straitstimes.com/singapore/team-to-study-popular-taoist-festival" >Nine Emperor Gods Festival </a>
+			led by Dr Koh Keng We.</p>
+			</p>
+		<p class="info">Niew Tai Ran	
+			<p class="info_small">Tai Ran is a first-generation American migrant. He grew up in Singapore before 
+			migrating to America. He is a father of two sons.</p>
+			</p>
+		<p class="info">Harmony Tee	
+			<p class="info_small">Harmony is a third-generation funeral director. Three years ago, she left the corporate world 
+			to take over the family business and started her own <a href="https://www.singaporefuneralservices.sg/">company</a>.
+			</p>
+	</div></div>
+	
+	<p class="title">Photo Credits<p>
+	<div>
+	<p class="info_small">Lin Shiau Yu and Family<br>
+	Tan Jian Song and Family<br>
+	Bennett Chin and Family<br>
+	John Ong  (CC BY-NC-SA 2.0)<br>
+	logatfer (CC BY-SA 2.0)<br>
+	Jorge Lascar (CC BY 2.0)<br>
+	Shenghung Lin (CC BY-NC-ND 2.0)<br>
+	ChinaVine (CC BY-NC-SA 2.0)</br>
+	Marufish (CC BY-SA 2.0)<br>
+	ST File Photos</p>
+	</div>
+
+	<br>
+	<p class="info_small">
+	Special thanks to ADM Photography department, Ang Song Nian, Ahmad Azahki and classmates.
+	</p>
+	
+	<br>
+	<p class="info_small" style="font-weight:bold">Hong Shu-ying, 2020</p>
+	
+</div>
+
+<!-- about pop-up -->
+<div id=About class="pop">
+	<button id="close" 
+		style="color:white, background-color:black"
+		onclick="document.getElementById('About').style.display='none'">
+	x </button>
+	
+	<h3 style="font-style:italic">守 Phases</h3>
+
+		<div>
+		<p class="info_text">
+		<span style="font-style:italic">守 Phases</span> presents four different accounts on the practice of ancestral worship. In contemporary times, what are some changes that have impacted this practice? Do they complicate or concretise one’s faith? Do they evolve or erode these practices? Why do we continue to practice? 
+		<br><br>
+		Ancestral worshipping practices sit in the grey area between culture, religion, and superstition. Because of this, there is a lack of literature on the subject. Instead, most documentations and research tend to focus on the tangible aspects surrounding these practices; such as the rituals and objects used. But the most dynamic facets of these practices lie in how and why people do it. Instances where inherited social and cultural norms are being practiced and questioned. The commitment to continue the spirit and legacy of these practices remains unchanged despite how societal and anthropological change. 
+		<br><br>
+		These practices are perhaps a reflection of our ephemeral existence and the anxieties surrounding it. By aligning and ascribing to a practice that goes back in time before one’s existence, it helps to establish a greater sense of meaning and identity. 
+		<br><br>
+		Ancestral worship is not just an act of faith or religion. It is how cultural and familial identity is passed on. It is also a manner of mourning and remembrance for those who have passed.
+		</p>
+		</div>
+	<br>
+	<p class="info_small"> This work is dedicated to my aunt who left us in 2012.</p>
+	<br>
+	<p class="info_small" style="font-weight:bold">Hong Shu-ying, 2020</p>
+	
+</div>
+
 <table style="width:100%" align="center" "table-layout:fixed" "empty-cells:show">
+<!-- image slide show -->
   <tr { style="height: 30vw" } >
     <th { style="width: 100%" }>
-    	<br><br><br>
     	<div class="Visual">
-			<img class="Images" src="Images/Img 1.jpg" style="height:20%">
-			<img class="Images" src="Images/Img 2.jpg" style="height:20%">
-			<img class="Images" src="Images/Img 3.jpg" style="height:20%">
-			<img class="Images" src="Images/Img 4.jpg" style="height:20%">
-			<img class="Images" src="Images/Img 5.jpg" style="height:20%">
-			<img class="Images" src="Images/Img 6.jpg" style="height:20%">
-			<img class="Images" src="Images/Img 7.jpg" style="height:20%">
-			<img class="Images" src="Images/Img 8.jpg" style="height:20%">
-			<img class="Images" src="Images/Img 9.jpg" style="height:20%">
-			<img class="Images" src="Images/Img 10.jpg" style="height:20%">
-			<img class="Images" src="Images/Img 11.jpg" style="height:20%">
-			<img class="Images" src="Images/Img 12.jpg" style="height:20%">
-			<img class="Images" src="Images/Img 13.jpg" style="height:20%">
-			<img class="Images" src="Images/Img 14.jpg" style="height:20%">
-			<img class="Images" src="Images/Img 15.jpg" style="height:20%">
-			<img class="Images" src="Images/Img 16.jpg" style="height:20%">
-			<img class="Images" src="Images/Img 17.jpg" style="height:20%">
-			<img class="Images" src="Images/Img 18.jpg" style="height:20%">
-			<img class="Images" src="Images/Img 19.jpg" style="height:20%">
-			<img class="Images" src="Images/Img 20.jpg" style="height:20%">
-			<img class="Images" src="Images/Img 21.jpg" style="height:20%">
+			<img class="Images" src="Images/Image 1.jpg" style="height:20%">
+			<img class="Images" src="Images/Image 2.jpg" style="height:20%">
+			<img class="Images" src="Images/Image 3.jpg" style="height:20%">
+			<img class="Images" src="Images/Image 4.jpg" style="height:20%">
+			<img class="Images" src="Images/Image 5.jpg" style="height:20%">
+			<img class="Images" src="Images/Image 6.jpg" style="height:20%">
+			<img class="Images" src="Images/Image 7.jpg" style="height:20%">
+			<img class="Images" src="Images/Image 8.jpg" style="height:20%">
+			<img class="Images" src="Images/Image 9.jpg" style="height:20%">
+			<img class="Images" src="Images/Image 10.jpg" style="height:20%">
+			<img class="Images" src="Images/Image 11.jpg" style="height:20%">
+			<img class="Images" src="Images/Image 12.jpg" style="height:20%">
+			<img class="Images" src="Images/Image 13.jpg" style="height:20%">
+			<img class="Images" src="Images/Image 14.jpg" style="height:20%">
+			<img class="Images" src="Images/Image 15.jpg" style="height:20%">
+			<img class="Images" src="Images/Image 16.jpg" style="height:20%">
+			<img class="Images" src="Images/Image 17.jpg" style="height:20%">
+			<img class="Images" src="Images/Image 18.jpg" style="height:20%">
+			<img class="Images" src="Images/Image 19.jpg" style="height:20%">
+			<img class="Images" src="Images/Image 20.jpg" style="height:20%">
+			<img class="Images" src="Images/Image 21.jpg" style="height:20%">
+			<img class="Images" src="Images/Image 22.jpg" style="height:20%">
+			<img class="Images" src="Images/Image 23.jpg" style="height:20%">
+			<img class="Images" src="Images/Image 24.jpg" style="height:20%">
+			<img class="Images" src="Images/Image 25.jpg" style="height:20%">
+			<img class="Images" src="Images/Image 26.jpg" style="height:20%">
+			<img class="Images" src="Images/Image 27.jpg" style="height:20%">
+			<img class="Images" src="Images/Image 28.jpg" style="height:20%">
+			<img class="Images" src="Images/Image 29.jpg" style="height:20%">
+			<img class="Images" src="Images/Image 30.jpg" style="height:20%">
+			<img class="Images" src="Images/Image 31.jpg" style="height:20%">
+			<img class="Images" src="Images/Image 32.jpg" style="height:20%">
+			<img class="Images" src="Images/Image 33.jpg" style="height:20%">
+			<img class="Images" src="Images/Image 34.jpg" style="height:20%">
+			<img class="Images" src="Images/Image 35.jpg" style="height:20%">
+			<img class="Images" src="Images/Image 36.jpg" style="height:20%">
+			<img class="Images" src="Images/Image 37.jpg" style="height:20%">
+			<img class="Images" src="Images/Image 38.jpg" style="height:20%">
+			<img class="Images" src="Images/Image 39.jpg" style="height:20%">
+			<img class="Images" src="Images/Image 40.jpg" style="height:20%">
+			<img class="Images" src="Images/Image 41.jpg" style="height:20%">
+			<img class="Images" src="Images/Image 42.jpg" style="height:20%">
+			<img class="Images" src="Images/Image 43.jpg" style="height:20%">
+			<img class="Images" src="Images/Image 44.jpg" style="height:20%">
+			<img class="Images" src="Images/Image 45.jpg" style="height:20%">
+			<img class="Images" src="Images/Image 46.jpg" style="height:20%">
+			<img class="Images" src="Images/Image 47.jpg" style="height:20%">
+			<img class="Images" src="Images/Image 48.jpg" style="height:20%">
+			<img class="Images" src="Images/Image 49.jpg" style="height:20%">
+			<img class="Images" src="Images/Image 50.jpg" style="height:20%">
+			<img class="Images" src="Images/Image 51.jpg" style="height:20%">
+			<img class="Images" src="Images/Image 52.jpg" style="height:20%">
+			<img class="Images" src="Images/Image 53.jpg" style="height:20%">
+			<img class="Images" src="Images/Image 54.jpg" style="height:20%">
+			<img class="Images" src="Images/Image 55.jpg" style="height:20%">
+			<img class="Images" src="Images/Image 56.jpg" style="height:20%">
+			<img class="Images" src="Images/Image 57.jpg" style="height:20%">
+			<img class="Images" src="Images/Image 58.jpg" style="height:20%">
+			<img class="Images" src="Images/Image 59.jpg" style="height:20%">
+			<img class="Images" src="Images/Image 60.jpg" style="height:20%">
+			<img class="Images" src="Images/Image 61.jpg" style="height:20%">
+			<img class="Images" src="Images/Image 62.jpg" style="height:20%">
+			<img class="Images" src="Images/Image 63.jpg" style="height:20%">
+			<img class="Images" src="Images/Image 64.jpg" style="height:20%">
+			<img class="Images" src="Images/Image 65.jpg" style="height:20%">
+			<img class="Images" src="Images/Image 66.jpg" style="height:20%">
+			<img class="Images" src="Images/Image 67.jpg" style="height:20%">
+			<img class="Images" src="Images/Image 68.jpg" style="height:20%">
+			<img class="Images" src="Images/Image 69.jpg" style="height:20%">
+			<img class="Images" src="Images/Image 70.jpg" style="height:20%">
+			<img class="Images" src="Images/Image 71.jpg" style="height:20%">
+			<img class="Images" src="Images/Image 72.jpg" style="height:20%">
+			<img class="Images" src="Images/Image 73.jpg" style="height:20%">
+			<img class="Images" src="Images/Image 74.jpg" style="height:20%">
+			<img class="Images" src="Images/Image 75.jpg" style="height:20%">
+			<img class="Images" src="Images/Image 76.jpg" style="height:20%">
+			<img class="Images" src="Images/Image 77.jpg" style="height:20%">
+			<img class="Images" src="Images/Image 78.jpg" style="height:20%">
+			<img class="Images" src="Images/Image 79.jpg" style="height:20%">
+			<img class="Images" src="Images/Image 80.jpg" style="height:20%">
+			<img class="Images" src="Images/Image 81.jpg" style="height:20%">
+			<img class="Images" src="Images/Image 82.jpg" style="height:20%">
+			<img class="Images" src="Images/Image 83.jpg" style="height:20%">
+			<img class="Images" src="Images/Image 84.jpg" style="height:20%">
+			<img class="Images" src="Images/Image 85.jpg" style="height:20%">
+			<img class="Images" src="Images/Image 86.jpg" style="height:20%">
+			<img class="Images" src="Images/Image 87.jpg" style="height:20%">
+			<img class="Images" src="Images/Image 88.jpg" style="height:20%">
+			<img class="Images" src="Images/Image 89.jpg" style="height:20%">
+			<img class="Images" src="Images/Image 90.jpg" style="height:20%">
+			<img class="Images" src="Images/Image 91.jpg" style="height:20%">
+			<img class="Images" src="Images/Image 92.jpg" style="height:20%">
+			<img class="Images" src="Images/Image 93.jpg" style="height:20%">
+			<img class="Images" src="Images/Image 94.jpg" style="height:20%">
+			<img class="Images" src="Images/Image 95.jpg" style="height:20%">
+			<img class="Images" src="Images/Image 96.jpg" style="height:20%">
+			<img class="Images" src="Images/Image 97.jpg" style="height:20%">
+			<img class="Images" src="Images/Image 98.jpg" style="height:20%">
+			<img class="Images" src="Images/Image 99.jpg" style="height:20%">
+			<img class="Images" src="Images/Image 100.jpg" style="height:20%">
+			<img class="Images" src="Images/Image 101.jpg" style="height:20%">
+			<img class="Images" src="Images/Image 102.jpg" style="height:20%">
+			<img class="Images" src="Images/Image 103.jpg" style="height:20%">
+			<img class="Images" src="Images/Image 104.jpg" style="height:20%">
+			<img class="Images" src="Images/Image 105.jpg" style="height:20%">
+			<img class="Images" src="Images/Image 106.jpg" style="height:20%">
+			<img class="Images" src="Images/Image 107.jpg" style="height:20%">
+			<img class="Images" src="Images/Image 108.jpg" style="height:20%">
+			<img class="Images" src="Images/Image 109.jpg" style="height:20%">
+			<img class="Images" src="Images/Image 110.jpg" style="height:20%">
+			<img class="Images" src="Images/Image 111.jpg" style="height:20%">
+			<img class="Images" src="Images/Image 112.jpg" style="height:20%">
+			<img class="Images" src="Images/Image 113.jpg" style="height:20%">
+			<img class="Images" src="Images/Image 114.jpg" style="height:20%">
+			<img class="Images" src="Images/Image 115.jpg" style="height:20%">
+			<img class="Images" src="Images/Image 116.jpg" style="height:20%">
+			<img class="Images" src="Images/Image 117.jpg" style="height:20%">
+			<img class="Images" src="Images/Image 118.jpg" style="height:20%">
+			<img class="Images" src="Images/Image 119.jpg" style="height:20%">
+			<img class="Images" src="Images/Image 120.jpg" style="height:20%">
+			<img class="Images" src="Images/Image 121.jpg" style="height:20%">
+			<img class="Images" src="Images/Image 122.jpg" style="height:20%">
+			<img class="Images" src="Images/Image 123.jpg" style="height:20%">
+			<img class="Images" src="Images/Image 124.jpg" style="height:20%">
+			<img class="Images" src="Images/Image 125.jpg" style="height:20%">
+			<img class="Images" src="Images/Image 126.jpg" style="height:20%">
+			<img class="Images" src="Images/Image 127.jpg" style="height:20%">
+			<img class="Images" src="Images/Image 128.jpg" style="height:20%">
+			<img class="Images" src="Images/Image 129.jpg" style="height:20%">
+			<img class="Images" src="Images/Image 130.jpg" style="height:20%">
+			<img class="Images" src="Images/Image 131.jpg" style="height:20%">
+			<img class="Images" src="Images/Image 132.jpg" style="height:20%">
+			<img class="Images" src="Images/Image 133.jpg" style="height:20%">
+			<img class="Images" src="Images/Image 134.jpg" style="height:20%">
+			<img class="Images" src="Images/Image 135.jpg" style="height:20%">
+			<img class="Images" src="Images/Image 136.jpg" style="height:20%">
+			<img class="Images" src="Images/Image 137.jpg" style="height:20%">
+			<img class="Images" src="Images/Image 138.jpg" style="height:20%">
+			<img class="Images" src="Images/Image 139.jpg" style="height:20%">
+			<img class="Images" src="Images/Image 140.jpg" style="height:20%">
+			<img class="Images" src="Images/Image 141.jpg" style="height:20%">
+			<img class="Images" src="Images/Image 142.jpg" style="height:20%">
+			<img class="Images" src="Images/Image 143.jpg" style="height:20%">
+			<img class="Images" src="Images/Image 144.jpg" style="height:20%">
+			<img class="Images" src="Images/Image 145.jpg" style="height:20%">
+			<img class="Images" src="Images/Image 146.jpg" style="height:20%">
+			<img class="Images" src="Images/Image 147.jpg" style="height:20%">
+			<img class="Images" src="Images/Image 148.jpg" style="height:20%">
+			<img class="Images" src="Images/Image 149.jpg" style="height:20%">
 		</div>
-		  <script>
+		 <script>
 			var myIndex = 0;
 			carousel();
 
@@ -167,29 +477,30 @@
 		  }</script>
     </th>
   </tr>
+<!-- videos and controls --> 
  	<table>
 		<tr { style="height: 100%" } >
 		<th { style="width: 45%" }>
 		<th { style="width: 10%" }>
 		<th { style="width: 45%" }>
 	<tr><td>
-		<video id="AudioA" max-width="100%" width="100%">
-			<source src="Sample 1.mp4" type="video/mp4">
+		<video id="AudioA" max-width="40vw" max-height="60px" height="80%">
+			<source src="Fi_DawinandAuntie_60p_com.mp4" type="video/mp4">
 			Please try on Chrome or refresh.
 		</video>
 	</td><td>
-    	<div id="Buttons" class="table">
+    	<div id="Buttons" class="table" style="margin:5pt">
 		<button class="tooltip" onclick="PlayA()"> < 
 			<span class="tooltiptext">Dawin + Geok Lan</span>
 		</button>
 		<button class="tooltip" onclick="PlayB()"> > 
 			<span class="tooltiptext">Tai Ran + Harmony</span>
 		</button> 
-		<br><br>
+		<br>
   		<button class="tooltip" onclick="Pause()">||
   			<span class="tooltiptext">pause audio</span>
   		</button>
-  		<br><br>
+  		<br>
 		<div class="tooltip">
 		<input class="tooltip" id="vol-control" type="range" min="0" max="100" step="1" oninput="thisVolume(this.value)" 
 			onchange="thisVolume(this.value)"></input>
@@ -197,8 +508,8 @@
 		</div>
 		</div>
 	 </td><td>
- 	 	<video id="AudioB" max-width="100%" width="100%">
-  	  		<source src="Sample 1.mp4" type="video/mp4">
+ 	 	<video id="AudioB" max-width="40vw" max-height="60px" height="40%">
+  	  		<source src="Fi_TRandHarmony_60p_com.mp4" type="video/mp4">
  	   		Please try on Chrome or refresh.
  	 	</video>
  	 </td>		
@@ -230,17 +541,20 @@
 		</script>
     </td>
   </tr></table>
+<!-- links -->
   <tr { style="height: 20%" } >
     <td>
 		<table id="links" class="table" style="width:100%" align="center-top" "table-layout:fixed" "empty-cells:show">
-		  <tr { style="height: 100%" }>
+		  <tr { style="height: 80%" }>
 		  <th { style="width: 50%" }>
 		  <th { style="width: 50%" }>
 			<tr><td id="statement" class="text"><p>
-			<a href= "/DP3008/Statement.html" target="_blank"> About this Work </a>
+			<a id="open about" onclick="document.getElementById('About').style.display='block'">
+			About this Work </a>
 			</p></td>
 			<td><p>
-			<a href= "/DP3008/Statment.html#credits" target="_blank"> Credits </a>
+			<a id="open credits" onclick="document.getElementById('Title').style.display='block'">
+			Credits </a>
 			</p></td></tr>
 		</tr></table>
 	</td>
